@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manada & Sinan's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uW/j+pE3j0h8u9wQoG2tE+q8iA9t9fXjR3l3d9h9l0w5W4A0F4O7PzH4G5K4d3H6d5h3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-zinc-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100;
+        }
+
+        .scroll-mt-24 {
+            scroll-margin-top: 6rem;
+        }
+
+        /* Custom color theme for Tailwind */
+        :root {
+            --color-primary: #008080; /* Teal */
+            --color-secondary: #f5f5dc; /* Beige */
+            --color-text-light: #f8fafc;
+            --color-text-dark: #1e293b;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#008080',
+                        'secondary': '#f5f5dc',
+                        'dark-text': '#1e293b',
+                        'light-text': '#f8fafc',
+                        'accent': '#FB923C',
+                        'card-bg': '#ffffff',
+                        'dark-card-bg': '#1e293b'
+                    },
+                    boxShadow: {
+                        'custom': '0 4px 14px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-secondary/80 backdrop-blur-md dark:bg-dark-card-bg/80 py-4 shadow-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold text-dark-text dark:text-light-text hover:text-primary transition-colors">Manada & Sinan</a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-light-text transition-colors">About</a>
+                <a href="#projects" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-light-text transition-colors">Projects</a>
+                <a href="#contact" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-light-text transition-colors">Contact</a>
+                <a href="#" class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-light-text transition-transform duration-300 hover:scale-105">
+                    Download Resume
+                </a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-slate-600 dark:text-slate-400 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-secondary dark:bg-dark-card-bg shadow-lg py-4 transition-transform duration-300">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="#about" class="text-lg font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-light-text transition-colors">About</a></li>
+                <li><a href="#projects" class="text-lg font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-light-text transition-colors">Projects</a></li>
+                <li><a href="#contact" class="text-lg font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-light-text transition-colors">Contact</a></li>
+                <li><a href="#" class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-lg font-medium text-light-text transition-transform duration-300 hover:scale-105">Download Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative overflow-hidden pt-24 pb-16 md:pt-40 md:pb-24 text-center">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-dark-text dark:text-light-text mb-4 leading-tight">
+                    Creative Duo &<br> <span id="typing-text" class="text-primary"></span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
+                    Crafting innovative web solutions together.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#projects" class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105">
+                        View Our Work
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 px-8 py-3 text-lg font-semibold text-slate-800 dark:text-slate-200 transition-colors duration-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        Let's Collaborate
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-secondary dark:bg-dark-card-bg py-24 scroll-mt-24">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16">The Minds Behind the Code</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="flex justify-center">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl border-4 border-primary">
+                            <img src="https://placehold.co/800x800/e0e0e0/000000?text=Manada+and+Sinan" alt="Professional headshot of Manada and Sinan" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+                            <p>We are Manada and Sinan, a collaborative coding duo and students at Vidya Academy of Science and Technology. Our partnership has led to the successful completion of over 25 projects, a journey that has honed our skills in creating robust and user-friendly digital solutions.</p>
+                            <p>Our dedication to innovation and excellence was recognized with the prestigious National Coders Award, presented to us by Narendra Modi himself. This achievement fuels our passion for pushing the boundaries of technology and solving complex challenges.</p>
+                            <p>We specialize in full-stack development, with a talent for transforming ideas into functional, elegant web applications. From front-end design to back-end architecture, we work seamlessly to deliver high-quality results. Our key projects include developing the "Saved" feature for Instagram and the "Blend" feature for a popular platform.</p>
+                        </div>
+                        <h3 class="text-2xl font-semibold mt-12 mb-6">Our Technical Toolbox</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="rounded-full bg-primary/20 text-primary px-4 py-1.5 text-sm font-medium">HTML5 & CSS3</span>
+                            <span class="rounded-full bg-primary/20 text-primary px-4 py-1.5 text-sm font-medium">JavaScript</span>
+                            <span class="rounded-full bg-primary/20 text-primary px-4 py-1.5 text-sm font-medium">React & Vue</span>
+                            <span class="rounded-full bg-primary/20 text-primary px-4 py-1.5 text-sm font-medium">Python & Django</span>
+                            <span class="rounded-full bg-primary/20 text-primary px-4 py-1.5 text-sm font-medium">Node.js</span>
+                            <span class="rounded-full bg-primary/20 text-primary px-4 py-1.5 text-sm font-medium">SQL & NoSQL</span>
+                            <span class="rounded-full bg-primary/20 text-primary px-4 py-1.5 text-sm font-medium">Git & GitHub</span>
+                            <span class="rounded-full bg-primary/20 text-primary px-4 py-1.5 text-sm font-medium">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 scroll-mt-24">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16">Things We've Built</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1: Instagram Saved Feature -->
+                    <div class="group relative bg-card-bg dark:bg-dark-card-bg rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 overflow-hidden">
+                        <img src="https://placehold.co/800x500/f5f5dc/008080?text=Instagram+Saved" alt="Instagram Saved feature preview" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Instagram "Saved" Feature</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">A custom-built replication of the "Saved" feature, allowing users to bookmark and organize content with a simple, intuitive interface.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Full-Stack</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">UI/UX Design</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Database Design</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="#" class="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-transform duration-300 hover:scale-105">
+                                    <i class="fa-solid fa-play mr-2"></i> Live Demo
+                                </a>
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                                    <i class="fa-brands fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2: Blend Feature -->
+                    <div class="group relative bg-card-bg dark:bg-dark-card-bg rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 overflow-hidden">
+                        <img src="https://placehold.co/800x500/008080/f5f5dc?text=Blend+Feature" alt="Blend feature preview" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">"Blend" Feature</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">An innovative "Blend" tool that combines data streams or content elements, showcasing advanced integration and real-time processing capabilities.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Data Integration</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Real-Time Processing</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">API Development</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="#" class="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-transform duration-300 hover:scale-105">
+                                    <i class="fa-solid fa-play mr-2"></i> Live Demo
+                                </a>
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                                    <i class="fa-brands fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="group relative bg-card-bg dark:bg-dark-card-bg rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 overflow-hidden">
+                        <img src="https://placehold.co/800x500/f5f5dc/008080?text=Project+3" alt="Project 3 preview image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Personal Blog Site</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">A custom-built blog platform with a content management system, allowing for easy publishing and editing of articles.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Next.js</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Sanity CMS</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Tailwind CSS</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="#" class="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-transform duration-300 hover:scale-105">
+                                    <i class="fa-solid fa-play mr-2"></i> Live Demo
+                                </a>
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                                    <i class="fa-brands fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card 4 -->
+                     <div class="group relative bg-card-bg dark:bg-dark-card-bg rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 overflow-hidden">
+                        <img src="https://placehold.co/800x500/008080/f5f5dc?text=Project+4" alt="Project 4 preview image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Weather Dashboard</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">A single-page application that fetches and displays real-time weather data using a public API.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">HTML</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">CSS</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">JavaScript</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">API</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="#" class="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-transform duration-300 hover:scale-105">
+                                    <i class="fa-solid fa-play mr-2"></i> Live Demo
+                                </a>
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                                    <i class="fa-brands fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 5 -->
+                    <div class="group relative bg-card-bg dark:bg-dark-card-bg rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 overflow-hidden">
+                        <img src="https://placehold.co/800x500/f5f5dc/008080?text=Project+5" alt="Project 5 preview image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Multiplayer Game</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">A simple web-based multiplayer game built with real-time communication, demonstrating socket programming.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Socket.io</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Express.js</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="#" class="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-transform duration-300 hover:scale-105">
+                                    <i class="fa-solid fa-play mr-2"></i> Live Demo
+                                </a>
+                                <a href="#" class="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                                    <i class="fa-brands fa-github mr-2"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-secondary dark:bg-dark-card-bg py-24 scroll-mt-24">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16">Let's Create Together</h2>
+                <div class="max-w-xl mx-auto text-center">
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">
+                        We are currently <span class="text-primary font-bold">available for new opportunities</span> and freelance projects. Let's connect and build something amazing!
+                    </p>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary bg-card-bg dark:bg-dark-card-bg text-dark-text dark:text-light-text">
+                        </div>
+                        <div>
+                            <input type="email" id="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary bg-card-bg dark:bg-dark-card-bg text-dark-text dark:text-light-text">
+                        </div>
+                        <div>
+                            <textarea id="message" rows="5" placeholder="Your Message" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary bg-card-bg dark:bg-dark-card-bg text-dark-text dark:text-light-text"></textarea>
+                        </div>
+                        <button type="submit" class="w-full rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                    <div class="mt-8 flex justify-center space-x-6">
+                        <a href="mailto:manadaandsinan@example.com" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                            <i class="fa-solid fa-envelope text-2xl"></i>
+                        </a>
+                        <a href="https://github.com/manadaandsinan" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/manadaandsinan" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                            <i class="fa-brands fa-linkedin text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-12 text-center text-slate-600 dark:text-slate-400 text-sm">
+        <p>&copy; 2024 Manada & Sinan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Typing animation for the hero section
+        const typingTextElement = document.getElementById('typing-text');
+        const phrases = ["Students at VAST", "National Coders Awardees", "Problem Solvers"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                typingTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, 1500);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 150;
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', typeWriter);
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Simple form handling (prevents default submission)
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log('Form submitted. Note: This is a static demo, form data is not sent.');
+        });
+    </script>
+</body>
+</html>
